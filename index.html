@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Comment section</title>
+    <link rel="stylesheet" href="./css/reset.css"/>
+    <link rel="stylesheet" href="./css/style.css"/>
+    <script src="js/just-validate.production.min.js" defer></script>
+    <script src="js/script.js" defer></script>
+</head>
+
+<body class="page">
+<main class="page__container">
+    <form class="form">
+        <div class="form__row">
+            <label for="name">Name:</label>
+            <div class="form__input-container">
+                <input class="form__name" id="name" type="text" placeholder="Your name"/>
+            </div>
+        </div>
+        <div class="form__row">
+            <label for="text">Comment:</label>
+            <div class="form__input-container">
+                <textarea class="form__text" id="text" placeholder="Your comment"></textarea>
+            </div>
+        </div>
+        <div class="form__row">
+            <label for="date">Date:</label>
+            <input class="form__date" id="date" type="date"/>
+        </div>
+        <input class="form__send" type="submit" value="Send">
+    </form>
+
+    <ul class="comment-list">
+        <li class="comment" data-comment-id="0">
+            <div class="comment__row">
+                <h3 class="comment__name">Жмышенко Валерий Альбертович</h3>
+                <button class="comment__delete" data-delete-id="0">Delete</button>
+            </div>
+            <p class="comment__text">Здравствуйте дорогой Мартин Алексеич! Пишу вам сразу по приезду, прямо вот
+                только что вошёл и сел писать. Тут всё у нас хорошо, весна вовсю, снег ещё не сошёл, но вроде бы
+                сходит, на дороге намёрзло много, а калитку я еле отодрал — вон как пристыл внизу ледок то! Так что
+                вошёл когда, сразу трубы проверил и понял что целы слава Богу.</p>
+            <div class="comment__row">
+                <time class="comment__date">сегодня, 04:20</time>
+                <a class="comment__like">
+                    <div class="icon">
+                        <svg class="prime" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <path fill="currentColor"
+                                  d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z">
+                            </path>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <path fill="currentColor"
+                                  d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="counter"></div>
+                </a>
+            </div>
+        </li>
+    </ul>
+</main>
+</body>
+</html>
