@@ -3,7 +3,7 @@
     font: 400 24px 'Roboto';
     scroll-behavior: smooth;
     --main-width: 750px;
-    --grey: #808080;
+    --light-purple: #c8a8e5;
     --purple: #8a2be2ff;
     --red: #ff4040;
     --shadow-color: rgb(0, 0, 255, .2);
@@ -33,7 +33,7 @@
     flex-direction: column;
     gap: 15px;
     margin-bottom: 30px;
-    border: 2px solid var(--grey);
+    border: 2px outset var(--light-purple);
     border-radius: 10px;
     padding: 15px;
     box-shadow: 8px 8px 2px 1px var(--shadow-color);
@@ -75,7 +75,7 @@
     max-width: 150px;
     height: 40px;
     cursor: pointer;
-    border-color: var(--grey);
+    border-color: var(--light-purple);
     border-radius: 10px;
 }
 
@@ -92,7 +92,7 @@
     align-items: flex-start;
     gap: 20px;
     padding: 15px;
-    border: 2px solid var(--grey);
+    border: 2px outset var(--light-purple);
     border-radius: 10px;
     margin-bottom: 20px;
     box-shadow: 8px 8px 2px 1px var(--shadow-color);
@@ -109,6 +109,7 @@
 .comment__text {
     text-align: justify;
     text-justify: inter-word;
+    line-height: 1.2em;
     font-size: 20px;
 }
 
@@ -127,13 +128,13 @@
 
 .comment__delete {
     font: 400 20px 'Roboto';
-    width: 100%;
-    max-width: 150px;
+    width: 40px;
     height: 40px;
     cursor: pointer;
-    border-color: var(--grey);
+    border-color: var(--light-purple);
     border-radius: 10px;
     user-select: none;
+    filter: invert(58%) sepia(50%) saturate(3641%) hue-rotate(322deg) brightness(100%) contrast(100%);
 }
 
 /* like button */

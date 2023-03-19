@@ -7,7 +7,7 @@ const commentForm = document.querySelector('.form'),
     textInput = commentForm.querySelector('.form__text'),
     dateInput = commentForm.querySelector('.form__date'),
     commentList = document.querySelector('.comment-list'),
-    likeButton = document.querySelector('.comment__like'),
+    likeButton = document.querySelector('.like'),
     form = document.querySelector('.form'),
     svgHeartPath = `<path fill="currentColor" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path>`,
     counter = '.counter',
@@ -89,12 +89,12 @@ function createComment(name, text, date) {
     newComment.innerHTML = `
         <div class="comment__row">
             <h3 class="comment__name">${name}</h3>
-            <button class="comment__delete" data-delete-id="${commentId}">Delete</button>
+            <time class="comment__date">${date}</time>
         </div>
             <p class="comment__text">${text}</p>
             <div class="comment__row">
-                <time class="comment__date">${date}</time>
-                <a class="comment__like" id="like">
+                
+                <a class="comment__like" data-like-id="${commentId}">
                     <div class="icon">
                         <svg class="prime" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                             ${svgHeartPath}
@@ -103,7 +103,10 @@ function createComment(name, text, date) {
                             ${svgHeartPath}
                         </svg>
                     </div>
-                    <div class="counter"></div>
+                    <div class="counter">0</div>
+                </a>
+                <a>
+                    <img class="comment__delete" data-delete-id="${commentId}" src="img/trash.svg" alt="trashcan" width="40">
                 </a>
             </div>
         `;
@@ -115,14 +118,6 @@ function createComment(name, text, date) {
 }
 
 // like button
-writeCounter(like, counter);
-setState(state, likeButton);
-
-function writeCounter(number, counter) {
-    const element = likeButton.querySelector(counter);
-    element.innerHTML = number;
-}
-
 function setState(state, element) {
     if (state) {
         element.classList.remove('dislike');
@@ -145,4 +140,9 @@ function addLike() {
         writeCounter(like, counter);
         setState(state, likeButton);
     }
+}
+
+function writeCounter(number, counter) {
+    const element = likeButton.querySelector(counter);
+    element.innerHTML = number;
 }
