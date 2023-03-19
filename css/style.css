@@ -4,15 +4,20 @@
     scroll-behavior: smooth;
     --main-width: 750px;
     --grey: #808080;
-    --blue: #45beff;
-    --red: #ff3c3c;
-    --pale-green: #bfffc4;
+    --purple: #8a2be2ff;
+    --red: #ff4040;
+    --shadow-color: rgb(0, 0, 255, .2);
 }
 
 * {
+    font: 400 24px 'Roboto';
     margin: unset;
     padding: unset;
     box-sizing: border-box;
+}
+
+.page {
+    background-color: #f1f5f8;
 }
 
 .page__container {
@@ -22,6 +27,7 @@
 }
 
 .form {
+    background-color: #fff;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -30,6 +36,7 @@
     border: 2px solid var(--grey);
     border-radius: 10px;
     padding: 15px;
+    box-shadow: 8px 8px 2px 1px var(--shadow-color);
 }
 
 .form__row {
@@ -42,7 +49,7 @@
     font: 400 20px 'Roboto';
     width: 100%;
     max-width: 500px;
-    padding: 5px;
+    padding: 10px;
     border-radius: 10px;
 }
 
@@ -78,6 +85,7 @@
 }
 
 .comment {
+    background-color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -87,6 +95,7 @@
     border: 2px solid var(--grey);
     border-radius: 10px;
     margin-bottom: 20px;
+    box-shadow: 8px 8px 2px 1px var(--shadow-color);
 }
 
 .comment-list {
@@ -138,7 +147,7 @@
     cursor: pointer;
     padding: 0 20px;
     transition: 150ms all;
-    background-color: var(--blue);
+    background-color: var(--purple);
 }
 
 .comment__like.dislike .icon svg.prime {
